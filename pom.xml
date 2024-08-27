@@ -3,19 +3,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>com.alibaba.nacos</groupId>
     <artifactId>nacos-plugin-ext</artifactId>
     <packaging>pom</packaging>
     <version>${revision}</version>
-    
+
     <developers>
         <developer>
             <name>li-xiao-shuang</name>
             <email>644968328@qq.com</email>
         </developer>
     </developers>
-    
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -23,7 +23,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    
+
     <organization>
         <name>nacos-group</name>
         <url>https://github.com/nacos-group</url>
@@ -43,7 +43,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <alibaba-nacos.version>2.3.0-SNAPSHOT</alibaba-nacos.version>
+        <alibaba-nacos.version>2.4.1</alibaba-nacos.version>
         <maven-flatten-version>1.1.0</maven-flatten-version>
         <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
         <junit.version>4.12</junit.version>
@@ -56,7 +56,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -85,7 +85,7 @@
                 <version>${alibaba-nacos.version}</version>
                 <scope>provided</scope>
             </dependency>
-            
+
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-common</artifactId>
@@ -101,7 +101,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    
+
     <build>
         <plugins>
             <!--Packaging plug-in-->
@@ -142,7 +142,7 @@
                     </execution>
                 </executions>
             </plugin>
-    
+
             <!--Process version placeholders-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

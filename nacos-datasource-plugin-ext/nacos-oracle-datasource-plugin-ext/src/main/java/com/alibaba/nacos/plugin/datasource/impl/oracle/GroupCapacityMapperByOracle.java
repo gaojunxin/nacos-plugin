@@ -34,4 +34,9 @@ public class GroupCapacityMapperByOracle extends AbstractOracleMapper
 		return new MapperResult(sql, CollectionUtils.list(
 				context.getWhereParameter(FieldConstant.ID), context.getPageSize()));
 	}
+
+	@Override
+	public String getFunction(String s) {
+		return null;
+	}
 }

@@ -30,12 +30,12 @@ import com.alibaba.nacos.plugin.datasource.model.MapperResult;
  */
 public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		implements ConfigTagsRelationMapper {
-	
+
 
 	private String getLimitPageSqlWithOffset(String sql, int startOffset, int pageSize) {
 		return getDatabaseDialect().getLimitPageSqlWithOffset(sql, startOffset, pageSize);
 	}
-	
+
 	@Override
 	public MapperResult findConfigInfo4PageCountRows(MapperContext context) {
 		final String appName = (String) context.getWhereParameter(FieldConstant.APP_NAME);
@@ -43,13 +43,13 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		final String group = (String) context.getWhereParameter(FieldConstant.GROUP_ID);
 		final String content = (String) context.getWhereParameter(FieldConstant.CONTENT);
 		final String[] tagArr = (String[]) context.getWhereParameter(FieldConstant.TAG_ARR);
-		
+
 		List<Object> paramList = new ArrayList<>();
 		StringBuilder where = new StringBuilder(" WHERE ");
 		final String sqlCount = "SELECT count(*) FROM config_info  a LEFT JOIN config_tags_relation b ON a.id=b.id";
-		
+
 		where.append(" a.tenant_id=NVL(?,'").append(NamespaceUtil.getNamespaceDefaultId()).append("') ");
-		
+
 		if (StringUtils.isNotBlank(dataId)) {
 			where.append(" AND a.data_id=? ");
 			paramList.add(dataId);
@@ -76,7 +76,7 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		where.append(") ");
 		return new MapperResult(sqlCount + where, paramList);
 	}
-	
+
 	@Override
 	public MapperResult findConfigInfoLike4PageCountRows(MapperContext context) {
 		final String appName = (String) context.getWhereParameter(FieldConstant.APP_NAME);
@@ -85,19 +85,19 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		final String group = (String) context.getWhereParameter(FieldConstant.GROUP_ID);
 		final String content = (String) context.getWhereParameter(FieldConstant.CONTENT);
 		final String[] tagArr = (String[]) context.getWhereParameter(FieldConstant.TAG_ARR);
-		
+
 		List<Object> paramList = new ArrayList<>();
 		StringBuilder where = new StringBuilder(" WHERE ");
 		final String sqlCount = "SELECT count(*) FROM config_info  a LEFT JOIN config_tags_relation b ON a.id=b.id ";
-		
+
 		if (StringUtils.isBlank(tenantId)) {
 			where.append(" a.tenant_id ='").append(NamespaceUtil.getNamespaceDefaultId()).append("' ");
 		}else {
 			where.append(" a.tenant_id LIKE ? ");
 			paramList.add(tenantId);
 		}
-		
-		
+
+
 		if (!StringUtils.isBlank(dataId)) {
 			where.append(" AND a.data_id LIKE ? ");
 			paramList.add(dataId);
@@ -114,7 +114,7 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 			where.append(" AND a.content LIKE ? ");
 			paramList.add(content);
 		}
-		
+
 		where.append(" AND b.tag_name IN (");
 		for (int i = 0; i < tagArr.length; i++) {
 			if (i != 0) {
@@ -126,7 +126,7 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		where.append(") ");
 		return new MapperResult(sqlCount + where, paramList);
 	}
-	
+
 	@Override
 	public MapperResult findConfigInfo4PageFetchRows(MapperContext context) {
 		final String tenant = (String) context.getWhereParameter(FieldConstant.TENANT_ID);
@@ -140,10 +140,10 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		StringBuilder where = new StringBuilder(" WHERE ");
 		final String sql = "SELECT a.id,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content FROM config_info  a LEFT JOIN "
 				+ "config_tags_relation b ON a.id=b.id";
-		
+
 		where.append(" a.tenant_id=NVL(?, '").append(NamespaceUtil.getNamespaceDefaultId()).append("') ");
 		paramList.add(tenant);
-		
+
 		if (StringUtils.isNotBlank(dataId)) {
 			where.append(" AND a.data_id=? ");
 			paramList.add(dataId);
@@ -189,14 +189,14 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		StringBuilder where = new StringBuilder(" WHERE ");
 		final String sqlFetchRows = "SELECT a.id,a.data_id,a.group_id,a.tenant_id,a.app_name,a.content "
 				+ "FROM config_info a LEFT JOIN config_tags_relation b ON a.id=b.id ";
-		
+
 		if (StringUtils.isBlank(tenant)) {
 			where.append(" a.tenant_id = '").append(NamespaceUtil.getNamespaceDefaultId()).append("' ");
 		} else {
 			where.append(" a.tenant_id LIKE ? ");
 			paramList.add(tenant);
 		}
-		
+
 		if (!StringUtils.isBlank(dataId)) {
 			where.append(" AND a.data_id LIKE ? ");
 			paramList.add(dataId);
@@ -227,5 +227,9 @@ public class ConfigTagsRelationMapperByOracle extends AbstractOracleMapper
 		String sql = getLimitPageSqlWithOffset(sqlFetchRows + where, startRow, pageSize);
 		return new MapperResult(sql, paramList);
 	}
-	
+
+	@Override
+	public String getFunction(String s) {
+		return null;
+	}
 }

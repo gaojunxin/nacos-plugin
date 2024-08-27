@@ -39,7 +39,7 @@ public class TenantCapacityMapperByOracle extends AbstractOracleMapper
 				CollectionUtils.list(context.getWhereParameter(FieldConstant.ID),
 						context.getWhereParameter(FieldConstant.LIMIT_SIZE)));
 	}
-	
+
 	@Override
 	public MapperResult incrementUsageWithDefaultQuotaLimit(MapperContext context) {
 		return new MapperResult(
@@ -50,7 +50,7 @@ public class TenantCapacityMapperByOracle extends AbstractOracleMapper
 						context.getWhereParameter(FieldConstant.TENANT_ID),
 						context.getWhereParameter(FieldConstant.USAGE)));
 	}
-	
+
 	@Override
 	public MapperResult incrementUsageWithQuotaLimit(MapperContext context) {
 		return new MapperResult(
@@ -59,14 +59,14 @@ public class TenantCapacityMapperByOracle extends AbstractOracleMapper
 				CollectionUtils.list(context.getUpdateParameter(FieldConstant.GMT_MODIFIED),
 						context.getWhereParameter(FieldConstant.TENANT_ID)));
 	}
-	
+
 	@Override
 	public MapperResult incrementUsage(MapperContext context) {
 		return new MapperResult("UPDATE tenant_capacity SET usage = usage + 1, gmt_modified = ? WHERE tenant_id = NVL(?, '"+NamespaceUtil.getNamespaceDefaultId()+"')",
 				CollectionUtils.list(context.getUpdateParameter(FieldConstant.GMT_MODIFIED),
 						context.getWhereParameter(FieldConstant.TENANT_ID)));
 	}
-	
+
 	@Override
 	public MapperResult decrementUsage(MapperContext context) {
 		return new MapperResult(
@@ -74,7 +74,7 @@ public class TenantCapacityMapperByOracle extends AbstractOracleMapper
 				CollectionUtils.list(context.getUpdateParameter(FieldConstant.GMT_MODIFIED),
 						context.getWhereParameter(FieldConstant.TENANT_ID)));
 	}
-	
+
 	@Override
 	public MapperResult correctUsage(MapperContext context) {
 		return new MapperResult(
@@ -84,7 +84,7 @@ public class TenantCapacityMapperByOracle extends AbstractOracleMapper
 						context.getUpdateParameter(FieldConstant.GMT_MODIFIED),
 						context.getWhereParameter(FieldConstant.TENANT_ID)));
 	}
-	
+
 	@Override
 	public MapperResult insertTenantCapacity(MapperContext context) {
 		List<Object> paramList = new ArrayList<>();
@@ -96,10 +96,15 @@ public class TenantCapacityMapperByOracle extends AbstractOracleMapper
 		paramList.add(context.getUpdateParameter(FieldConstant.GMT_CREATE));
 		paramList.add(context.getUpdateParameter(FieldConstant.GMT_MODIFIED));
 		paramList.add(context.getWhereParameter(FieldConstant.TENANT_ID));
-		
+
 		return new MapperResult(
 				"INSERT INTO tenant_capacity (tenant_id, quota, usage, max_size, max_aggr_count, max_aggr_size, "
 						+ "gmt_create, gmt_modified) SELECT ?, ?, count(*), ?, ?, ?, ?, ? FROM config_info WHERE tenant_id=NVL(?, '"+NamespaceUtil.getNamespaceDefaultId()+"')",
 				paramList);
+	}
+
+	@Override
+	public String getFunction(String s) {
+		return null;
 	}
 }

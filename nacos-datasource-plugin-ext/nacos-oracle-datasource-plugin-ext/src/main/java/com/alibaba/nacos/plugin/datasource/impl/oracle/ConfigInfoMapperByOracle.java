@@ -570,4 +570,8 @@ public class ConfigInfoMapperByOracle extends AbstractOracleMapper
 		return new MapperResult(sql, sqlArgs);
 	}
 
+	@Override
+	public String getFunction(String s) {
+		return null;
+	}
 }
