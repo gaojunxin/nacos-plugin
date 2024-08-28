@@ -31,4 +31,12 @@ public class ConfigInfoMapperByKingbase extends BaseConfigInfoMapper {
         return DatabaseTypeConstant.KINGBASE;
     }
 
+    @Override
+    public String getFunction(String functionName) {
+        if("NOW()".equals(functionName)) {
+            return "CURRENT_TIMESTAMP";
+        }
+        return super.getFunction(functionName);
+    }
+
 }
