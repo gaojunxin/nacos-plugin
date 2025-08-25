@@ -41,6 +41,11 @@ public class TenantCapacityMapperByOracle extends AbstractOracleMapper
 	}
 
 	@Override
+	public MapperResult select(MapperContext context) {
+		return null;
+	}
+
+	@Override
 	public MapperResult incrementUsageWithDefaultQuotaLimit(MapperContext context) {
 		return new MapperResult(
 				"UPDATE tenant_capacity SET usage = usage + 1, gmt_modified = ? WHERE tenant_id = NVL(?,'"+ NamespaceUtil.getNamespaceDefaultId()

@@ -28,6 +28,51 @@ public class GroupCapacityMapperByOracle extends AbstractOracleMapper
 		implements GroupCapacityMapper {
 
 	@Override
+	public MapperResult select(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult insertIntoSelect(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult insertIntoSelectByWhere(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult incrementUsageByWhereQuotaEqualZero(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult incrementUsageByWhereQuotaNotEqualZero(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult incrementUsageByWhere(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult decrementUsageByWhere(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult updateUsage(MapperContext context) {
+		return null;
+	}
+
+	@Override
+	public MapperResult updateUsageByWhere(MapperContext context) {
+		return null;
+	}
+
+	@Override
 	public MapperResult selectGroupInfoBySize(MapperContext context) {
 		String sql = getDatabaseDialect().getLimitTopSqlWithMark(
 				"SELECT id, group_id FROM group_capacity WHERE id > ?");
