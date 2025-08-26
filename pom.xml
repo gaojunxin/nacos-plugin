@@ -38,7 +38,7 @@
     </modules>
 
     <properties>
-        <revision>1.0.0</revision>
+        <revision>1.0.1</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -101,6 +101,20 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>cnooc-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://192.168.100.10:8081/nexus/repository/maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>cnooc-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.100.10:8081/nexus/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
     <build>
         <plugins>
