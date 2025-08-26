@@ -25,10 +25,7 @@ SET default_with_rowid = off;
 -- Name: nacos_config; Type: SCHEMA; Schema: -; Owner: system
 --
 
-CREATE SCHEMA nacos_config;
 
-
-ALTER SCHEMA nacos_config OWNER TO system;
 
 SET default_table_access_method = heap;
 
@@ -38,7 +35,7 @@ SET default_table_access_method = heap;
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.config_info (
+CREATE TABLE config_info (
     id bigint NOT NULL,
     data_id character varying(255 char) NOT NULL,
     group_id character varying(128 char),
@@ -59,7 +56,7 @@ CREATE TABLE nacos_config.config_info (
 );
 
 
-ALTER TABLE nacos_config.config_info OWNER TO system;
+;
 
 --
 -- TOC entry 5265 (class 0 OID 0)
@@ -67,7 +64,7 @@ ALTER TABLE nacos_config.config_info OWNER TO system;
 -- Name: TABLE config_info; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON TABLE nacos_config.config_info IS 'config_info';
+COMMENT ON TABLE config_info IS 'config_info';
 
 
 --
@@ -76,7 +73,7 @@ COMMENT ON TABLE nacos_config.config_info IS 'config_info';
 -- Name: COLUMN config_info.id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.id IS 'id';
+COMMENT ON COLUMN config_info.id IS 'id';
 
 
 --
@@ -85,7 +82,7 @@ COMMENT ON COLUMN nacos_config.config_info.id IS 'id';
 -- Name: COLUMN config_info.data_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.data_id IS 'data_id';
+COMMENT ON COLUMN config_info.data_id IS 'data_id';
 
 
 --
@@ -94,7 +91,7 @@ COMMENT ON COLUMN nacos_config.config_info.data_id IS 'data_id';
 -- Name: COLUMN config_info.group_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.group_id IS 'group_id';
+COMMENT ON COLUMN config_info.group_id IS 'group_id';
 
 
 --
@@ -103,7 +100,7 @@ COMMENT ON COLUMN nacos_config.config_info.group_id IS 'group_id';
 -- Name: COLUMN config_info.content; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.content IS 'content';
+COMMENT ON COLUMN config_info.content IS 'content';
 
 
 --
@@ -112,7 +109,7 @@ COMMENT ON COLUMN nacos_config.config_info.content IS 'content';
 -- Name: COLUMN config_info.md5; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.md5 IS 'md5';
+COMMENT ON COLUMN config_info.md5 IS 'md5';
 
 
 --
@@ -121,7 +118,7 @@ COMMENT ON COLUMN nacos_config.config_info.md5 IS 'md5';
 -- Name: COLUMN config_info.gmt_create; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.gmt_create IS '创建时间';
+COMMENT ON COLUMN config_info.gmt_create IS '创建时间';
 
 
 --
@@ -130,7 +127,7 @@ COMMENT ON COLUMN nacos_config.config_info.gmt_create IS '创建时间';
 -- Name: COLUMN config_info.gmt_modified; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.gmt_modified IS '修改时间';
+COMMENT ON COLUMN config_info.gmt_modified IS '修改时间';
 
 
 --
@@ -139,7 +136,7 @@ COMMENT ON COLUMN nacos_config.config_info.gmt_modified IS '修改时间';
 -- Name: COLUMN config_info.src_user; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.src_user IS 'source user';
+COMMENT ON COLUMN config_info.src_user IS 'source user';
 
 
 --
@@ -148,7 +145,7 @@ COMMENT ON COLUMN nacos_config.config_info.src_user IS 'source user';
 -- Name: COLUMN config_info.src_ip; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.src_ip IS 'source ip';
+COMMENT ON COLUMN config_info.src_ip IS 'source ip';
 
 
 --
@@ -157,7 +154,7 @@ COMMENT ON COLUMN nacos_config.config_info.src_ip IS 'source ip';
 -- Name: COLUMN config_info.app_name; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.app_name IS 'app_name';
+COMMENT ON COLUMN config_info.app_name IS 'app_name';
 
 
 --
@@ -166,7 +163,7 @@ COMMENT ON COLUMN nacos_config.config_info.app_name IS 'app_name';
 -- Name: COLUMN config_info.tenant_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.tenant_id IS '租户字段';
+COMMENT ON COLUMN config_info.tenant_id IS '租户字段';
 
 
 --
@@ -175,7 +172,7 @@ COMMENT ON COLUMN nacos_config.config_info.tenant_id IS '租户字段';
 -- Name: COLUMN config_info.c_desc; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.c_desc IS 'configuration description';
+COMMENT ON COLUMN config_info.c_desc IS 'configuration description';
 
 
 --
@@ -184,7 +181,7 @@ COMMENT ON COLUMN nacos_config.config_info.c_desc IS 'configuration description'
 -- Name: COLUMN config_info.c_use; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.c_use IS 'configuration usage';
+COMMENT ON COLUMN config_info.c_use IS 'configuration usage';
 
 
 --
@@ -193,7 +190,7 @@ COMMENT ON COLUMN nacos_config.config_info.c_use IS 'configuration usage';
 -- Name: COLUMN config_info.effect; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.effect IS '配置生效的描述';
+COMMENT ON COLUMN config_info.effect IS '配置生效的描述';
 
 
 --
@@ -202,7 +199,7 @@ COMMENT ON COLUMN nacos_config.config_info.effect IS '配置生效的描述';
 -- Name: COLUMN config_info.type; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.type IS '配置的类型';
+COMMENT ON COLUMN config_info.type IS '配置的类型';
 
 
 --
@@ -211,7 +208,7 @@ COMMENT ON COLUMN nacos_config.config_info.type IS '配置的类型';
 -- Name: COLUMN config_info.c_schema; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.c_schema IS '配置的模式';
+COMMENT ON COLUMN config_info.c_schema IS '配置的模式';
 
 
 --
@@ -220,7 +217,7 @@ COMMENT ON COLUMN nacos_config.config_info.c_schema IS '配置的模式';
 -- Name: COLUMN config_info.encrypted_data_key; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info.encrypted_data_key IS '密钥';
+COMMENT ON COLUMN config_info.encrypted_data_key IS '密钥';
 
 
 --
@@ -229,7 +226,7 @@ COMMENT ON COLUMN nacos_config.config_info.encrypted_data_key IS '密钥';
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.config_info_gray (
+CREATE TABLE config_info_gray (
     id bigint NOT NULL,
     data_id character varying(255 char) NOT NULL,
     group_id character varying(128 char) NOT NULL,
@@ -247,7 +244,7 @@ CREATE TABLE nacos_config.config_info_gray (
 );
 
 
-ALTER TABLE nacos_config.config_info_gray OWNER TO system;
+;
 
 --
 -- TOC entry 5283 (class 0 OID 0)
@@ -255,7 +252,7 @@ ALTER TABLE nacos_config.config_info_gray OWNER TO system;
 -- Name: TABLE config_info_gray; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON TABLE nacos_config.config_info_gray IS 'config_info_gray';
+COMMENT ON TABLE config_info_gray IS 'config_info_gray';
 
 
 --
@@ -264,7 +261,7 @@ COMMENT ON TABLE nacos_config.config_info_gray IS 'config_info_gray';
 -- Name: COLUMN config_info_gray.id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.id IS 'id';
+COMMENT ON COLUMN config_info_gray.id IS 'id';
 
 
 --
@@ -273,7 +270,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.id IS 'id';
 -- Name: COLUMN config_info_gray.data_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.data_id IS 'data_id';
+COMMENT ON COLUMN config_info_gray.data_id IS 'data_id';
 
 
 --
@@ -282,7 +279,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.data_id IS 'data_id';
 -- Name: COLUMN config_info_gray.group_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.group_id IS 'group_id';
+COMMENT ON COLUMN config_info_gray.group_id IS 'group_id';
 
 
 --
@@ -291,7 +288,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.group_id IS 'group_id';
 -- Name: COLUMN config_info_gray.content; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.content IS 'content';
+COMMENT ON COLUMN config_info_gray.content IS 'content';
 
 
 --
@@ -300,7 +297,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.content IS 'content';
 -- Name: COLUMN config_info_gray.md5; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.md5 IS 'md5';
+COMMENT ON COLUMN config_info_gray.md5 IS 'md5';
 
 
 --
@@ -309,7 +306,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.md5 IS 'md5';
 -- Name: COLUMN config_info_gray.src_user; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.src_user IS 'src_user';
+COMMENT ON COLUMN config_info_gray.src_user IS 'src_user';
 
 
 --
@@ -318,7 +315,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.src_user IS 'src_user';
 -- Name: COLUMN config_info_gray.src_ip; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.src_ip IS 'src_ip';
+COMMENT ON COLUMN config_info_gray.src_ip IS 'src_ip';
 
 
 --
@@ -327,7 +324,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.src_ip IS 'src_ip';
 -- Name: COLUMN config_info_gray.gmt_create; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.gmt_create IS 'gmt_create';
+COMMENT ON COLUMN config_info_gray.gmt_create IS 'gmt_create';
 
 
 --
@@ -336,7 +333,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.gmt_create IS 'gmt_create';
 -- Name: COLUMN config_info_gray.gmt_modified; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.gmt_modified IS 'gmt_modified';
+COMMENT ON COLUMN config_info_gray.gmt_modified IS 'gmt_modified';
 
 
 --
@@ -345,7 +342,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.gmt_modified IS 'gmt_modified';
 -- Name: COLUMN config_info_gray.app_name; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.app_name IS 'app_name';
+COMMENT ON COLUMN config_info_gray.app_name IS 'app_name';
 
 
 --
@@ -354,7 +351,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.app_name IS 'app_name';
 -- Name: COLUMN config_info_gray.tenant_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.tenant_id IS 'tenant_id';
+COMMENT ON COLUMN config_info_gray.tenant_id IS 'tenant_id';
 
 
 --
@@ -363,7 +360,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.tenant_id IS 'tenant_id';
 -- Name: COLUMN config_info_gray.gray_name; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.gray_name IS 'gray_name';
+COMMENT ON COLUMN config_info_gray.gray_name IS 'gray_name';
 
 
 --
@@ -372,7 +369,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.gray_name IS 'gray_name';
 -- Name: COLUMN config_info_gray.gray_rule; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.gray_rule IS 'gray_rule';
+COMMENT ON COLUMN config_info_gray.gray_rule IS 'gray_rule';
 
 
 --
@@ -381,7 +378,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.gray_rule IS 'gray_rule';
 -- Name: COLUMN config_info_gray.encrypted_data_key; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_info_gray.encrypted_data_key IS 'encrypted_data_key';
+COMMENT ON COLUMN config_info_gray.encrypted_data_key IS 'encrypted_data_key';
 
 
 --
@@ -389,7 +386,7 @@ COMMENT ON COLUMN nacos_config.config_info_gray.encrypted_data_key IS 'encrypted
 -- Name: config_info_gray_id_seq; Type: SEQUENCE; Schema: nacos_config; Owner: system
 --
 
-CREATE SEQUENCE nacos_config.config_info_gray_id_seq
+CREATE SEQUENCE config_info_gray_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -397,7 +394,7 @@ CREATE SEQUENCE nacos_config.config_info_gray_id_seq
     CACHE 1;
 
 
-ALTER TABLE nacos_config.config_info_gray_id_seq OWNER TO system;
+;
 
 --
 -- TOC entry 5298 (class 0 OID 0)
@@ -405,7 +402,7 @@ ALTER TABLE nacos_config.config_info_gray_id_seq OWNER TO system;
 -- Name: config_info_gray_id_seq; Type: SEQUENCE OWNED BY; Schema: nacos_config; Owner: system
 --
 
-ALTER SEQUENCE nacos_config.config_info_gray_id_seq OWNED BY nacos_config.config_info_gray.id;
+ALTER SEQUENCE config_info_gray_id_seq OWNED BY config_info_gray.id;
 
 
 --
@@ -413,7 +410,7 @@ ALTER SEQUENCE nacos_config.config_info_gray_id_seq OWNED BY nacos_config.config
 -- Name: config_info_id_seq; Type: SEQUENCE; Schema: nacos_config; Owner: system
 --
 
-CREATE SEQUENCE nacos_config.config_info_id_seq
+CREATE SEQUENCE config_info_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -421,7 +418,7 @@ CREATE SEQUENCE nacos_config.config_info_id_seq
     CACHE 1;
 
 
-ALTER TABLE nacos_config.config_info_id_seq OWNER TO system;
+;
 
 --
 -- TOC entry 5299 (class 0 OID 0)
@@ -429,7 +426,7 @@ ALTER TABLE nacos_config.config_info_id_seq OWNER TO system;
 -- Name: config_info_id_seq; Type: SEQUENCE OWNED BY; Schema: nacos_config; Owner: system
 --
 
-ALTER SEQUENCE nacos_config.config_info_id_seq OWNED BY nacos_config.config_info.id;
+ALTER SEQUENCE config_info_id_seq OWNED BY config_info.id;
 
 
 --
@@ -438,7 +435,7 @@ ALTER SEQUENCE nacos_config.config_info_id_seq OWNED BY nacos_config.config_info
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.config_tags_relation (
+CREATE TABLE config_tags_relation (
     id bigint NOT NULL,
     tag_name character varying(128 char) NOT NULL,
     tag_type character varying(64 char),
@@ -449,7 +446,7 @@ CREATE TABLE nacos_config.config_tags_relation (
 );
 
 
-ALTER TABLE nacos_config.config_tags_relation OWNER TO system;
+;
 
 --
 -- TOC entry 5300 (class 0 OID 0)
@@ -457,7 +454,7 @@ ALTER TABLE nacos_config.config_tags_relation OWNER TO system;
 -- Name: TABLE config_tags_relation; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON TABLE nacos_config.config_tags_relation IS 'config_tag_relation';
+COMMENT ON TABLE config_tags_relation IS 'config_tag_relation';
 
 
 --
@@ -466,7 +463,7 @@ COMMENT ON TABLE nacos_config.config_tags_relation IS 'config_tag_relation';
 -- Name: COLUMN config_tags_relation.id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_tags_relation.id IS 'id';
+COMMENT ON COLUMN config_tags_relation.id IS 'id';
 
 
 --
@@ -475,7 +472,7 @@ COMMENT ON COLUMN nacos_config.config_tags_relation.id IS 'id';
 -- Name: COLUMN config_tags_relation.tag_name; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_tags_relation.tag_name IS 'tag_name';
+COMMENT ON COLUMN config_tags_relation.tag_name IS 'tag_name';
 
 
 --
@@ -484,7 +481,7 @@ COMMENT ON COLUMN nacos_config.config_tags_relation.tag_name IS 'tag_name';
 -- Name: COLUMN config_tags_relation.tag_type; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_tags_relation.tag_type IS 'tag_type';
+COMMENT ON COLUMN config_tags_relation.tag_type IS 'tag_type';
 
 
 --
@@ -493,7 +490,7 @@ COMMENT ON COLUMN nacos_config.config_tags_relation.tag_type IS 'tag_type';
 -- Name: COLUMN config_tags_relation.data_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_tags_relation.data_id IS 'data_id';
+COMMENT ON COLUMN config_tags_relation.data_id IS 'data_id';
 
 
 --
@@ -502,7 +499,7 @@ COMMENT ON COLUMN nacos_config.config_tags_relation.data_id IS 'data_id';
 -- Name: COLUMN config_tags_relation.group_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_tags_relation.group_id IS 'group_id';
+COMMENT ON COLUMN config_tags_relation.group_id IS 'group_id';
 
 
 --
@@ -511,7 +508,7 @@ COMMENT ON COLUMN nacos_config.config_tags_relation.group_id IS 'group_id';
 -- Name: COLUMN config_tags_relation.tenant_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_tags_relation.tenant_id IS 'tenant_id';
+COMMENT ON COLUMN config_tags_relation.tenant_id IS 'tenant_id';
 
 
 --
@@ -520,7 +517,7 @@ COMMENT ON COLUMN nacos_config.config_tags_relation.tenant_id IS 'tenant_id';
 -- Name: COLUMN config_tags_relation.nid; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.config_tags_relation.nid IS 'nid, 自增长标识';
+COMMENT ON COLUMN config_tags_relation.nid IS 'nid, 自增长标识';
 
 
 --
@@ -528,7 +525,7 @@ COMMENT ON COLUMN nacos_config.config_tags_relation.nid IS 'nid, 自增长标识
 -- Name: config_tags_relation_nid_seq; Type: SEQUENCE; Schema: nacos_config; Owner: system
 --
 
-CREATE SEQUENCE nacos_config.config_tags_relation_nid_seq
+CREATE SEQUENCE config_tags_relation_nid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -536,7 +533,7 @@ CREATE SEQUENCE nacos_config.config_tags_relation_nid_seq
     CACHE 1;
 
 
-ALTER TABLE nacos_config.config_tags_relation_nid_seq OWNER TO system;
+;
 
 --
 -- TOC entry 5308 (class 0 OID 0)
@@ -544,7 +541,7 @@ ALTER TABLE nacos_config.config_tags_relation_nid_seq OWNER TO system;
 -- Name: config_tags_relation_nid_seq; Type: SEQUENCE OWNED BY; Schema: nacos_config; Owner: system
 --
 
-ALTER SEQUENCE nacos_config.config_tags_relation_nid_seq OWNED BY nacos_config.config_tags_relation.nid;
+ALTER SEQUENCE config_tags_relation_nid_seq OWNED BY config_tags_relation.nid;
 
 
 --
@@ -553,7 +550,7 @@ ALTER SEQUENCE nacos_config.config_tags_relation_nid_seq OWNED BY nacos_config.c
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.group_capacity (
+CREATE TABLE group_capacity (
     id bigint NOT NULL,
     group_id character varying(128 char) DEFAULT NULL::varchar NOT NULL,
     quota bigint DEFAULT 0 NOT NULL,
@@ -567,7 +564,7 @@ CREATE TABLE nacos_config.group_capacity (
 );
 
 
-ALTER TABLE nacos_config.group_capacity OWNER TO system;
+;
 
 --
 -- TOC entry 5309 (class 0 OID 0)
@@ -575,7 +572,7 @@ ALTER TABLE nacos_config.group_capacity OWNER TO system;
 -- Name: TABLE group_capacity; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON TABLE nacos_config.group_capacity IS '集群、各Group容量信息表';
+COMMENT ON TABLE group_capacity IS '集群、各Group容量信息表';
 
 
 --
@@ -584,7 +581,7 @@ COMMENT ON TABLE nacos_config.group_capacity IS '集群、各Group容量信息�
 -- Name: COLUMN group_capacity.id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.id IS '主键ID';
+COMMENT ON COLUMN group_capacity.id IS '主键ID';
 
 
 --
@@ -593,7 +590,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.id IS '主键ID';
 -- Name: COLUMN group_capacity.group_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.group_id IS 'Group ID，空字符表示整个集群';
+COMMENT ON COLUMN group_capacity.group_id IS 'Group ID，空字符表示整个集群';
 
 
 --
@@ -602,7 +599,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.group_id IS 'Group ID，空字符�
 -- Name: COLUMN group_capacity.quota; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.quota IS '配额，0表示使用默认值';
+COMMENT ON COLUMN group_capacity.quota IS '配额，0表示使用默认值';
 
 
 --
@@ -611,7 +608,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.quota IS '配额，0表示使用�
 -- Name: COLUMN group_capacity.usage; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.usage IS '使用量';
+COMMENT ON COLUMN group_capacity.usage IS '使用量';
 
 
 --
@@ -620,7 +617,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.usage IS '使用量';
 -- Name: COLUMN group_capacity.max_size; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.max_size IS '单个配置大小上限，单位为字节，0表示使用默认值';
+COMMENT ON COLUMN group_capacity.max_size IS '单个配置大小上限，单位为字节，0表示使用默认值';
 
 
 --
@@ -629,7 +626,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.max_size IS '单个配置大小上
 -- Name: COLUMN group_capacity.max_aggr_count; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.max_aggr_count IS '聚合子配置最大个数，，0表示使用默认值';
+COMMENT ON COLUMN group_capacity.max_aggr_count IS '聚合子配置最大个数，，0表示使用默认值';
 
 
 --
@@ -638,7 +635,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.max_aggr_count IS '聚合子配置
 -- Name: COLUMN group_capacity.max_aggr_size; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.max_aggr_size IS '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值';
+COMMENT ON COLUMN group_capacity.max_aggr_size IS '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值';
 
 
 --
@@ -647,7 +644,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.max_aggr_size IS '单个聚合数�
 -- Name: COLUMN group_capacity.max_history_count; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.max_history_count IS '最大变更历史数量';
+COMMENT ON COLUMN group_capacity.max_history_count IS '最大变更历史数量';
 
 
 --
@@ -656,7 +653,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.max_history_count IS '最大变更
 -- Name: COLUMN group_capacity.gmt_create; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.gmt_create IS '创建时间';
+COMMENT ON COLUMN group_capacity.gmt_create IS '创建时间';
 
 
 --
@@ -665,7 +662,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.gmt_create IS '创建时间';
 -- Name: COLUMN group_capacity.gmt_modified; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.group_capacity.gmt_modified IS '修改时间';
+COMMENT ON COLUMN group_capacity.gmt_modified IS '修改时间';
 
 
 --
@@ -673,7 +670,7 @@ COMMENT ON COLUMN nacos_config.group_capacity.gmt_modified IS '修改时间';
 -- Name: group_capacity_id_seq; Type: SEQUENCE; Schema: nacos_config; Owner: system
 --
 
-CREATE SEQUENCE nacos_config.group_capacity_id_seq
+CREATE SEQUENCE group_capacity_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -681,7 +678,7 @@ CREATE SEQUENCE nacos_config.group_capacity_id_seq
     CACHE 1;
 
 
-ALTER TABLE nacos_config.group_capacity_id_seq OWNER TO system;
+;
 
 --
 -- TOC entry 5320 (class 0 OID 0)
@@ -689,7 +686,7 @@ ALTER TABLE nacos_config.group_capacity_id_seq OWNER TO system;
 -- Name: group_capacity_id_seq; Type: SEQUENCE OWNED BY; Schema: nacos_config; Owner: system
 --
 
-ALTER SEQUENCE nacos_config.group_capacity_id_seq OWNED BY nacos_config.group_capacity.id;
+ALTER SEQUENCE group_capacity_id_seq OWNED BY group_capacity.id;
 
 
 --
@@ -698,7 +695,7 @@ ALTER SEQUENCE nacos_config.group_capacity_id_seq OWNED BY nacos_config.group_ca
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.his_config_info (
+CREATE TABLE his_config_info (
     id numeric NOT NULL,
     nid bigint NOT NULL,
     data_id character varying(255 char) NOT NULL,
@@ -719,7 +716,7 @@ CREATE TABLE nacos_config.his_config_info (
 );
 
 
-ALTER TABLE nacos_config.his_config_info OWNER TO system;
+;
 
 --
 -- TOC entry 5321 (class 0 OID 0)
@@ -727,7 +724,7 @@ ALTER TABLE nacos_config.his_config_info OWNER TO system;
 -- Name: TABLE his_config_info; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON TABLE nacos_config.his_config_info IS '多租户改造';
+COMMENT ON TABLE his_config_info IS '多租户改造';
 
 
 --
@@ -736,7 +733,7 @@ COMMENT ON TABLE nacos_config.his_config_info IS '多租户改造';
 -- Name: COLUMN his_config_info.id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.id IS 'id';
+COMMENT ON COLUMN his_config_info.id IS 'id';
 
 
 --
@@ -745,7 +742,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.id IS 'id';
 -- Name: COLUMN his_config_info.nid; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.nid IS 'nid, 自增标识';
+COMMENT ON COLUMN his_config_info.nid IS 'nid, 自增标识';
 
 
 --
@@ -754,7 +751,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.nid IS 'nid, 自增标识';
 -- Name: COLUMN his_config_info.data_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.data_id IS 'data_id';
+COMMENT ON COLUMN his_config_info.data_id IS 'data_id';
 
 
 --
@@ -763,7 +760,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.data_id IS 'data_id';
 -- Name: COLUMN his_config_info.group_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.group_id IS 'group_id';
+COMMENT ON COLUMN his_config_info.group_id IS 'group_id';
 
 
 --
@@ -772,7 +769,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.group_id IS 'group_id';
 -- Name: COLUMN his_config_info.app_name; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.app_name IS 'app_name';
+COMMENT ON COLUMN his_config_info.app_name IS 'app_name';
 
 
 --
@@ -781,7 +778,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.app_name IS 'app_name';
 -- Name: COLUMN his_config_info.content; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.content IS 'content';
+COMMENT ON COLUMN his_config_info.content IS 'content';
 
 
 --
@@ -790,7 +787,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.content IS 'content';
 -- Name: COLUMN his_config_info.md5; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.md5 IS 'md5';
+COMMENT ON COLUMN his_config_info.md5 IS 'md5';
 
 
 --
@@ -799,7 +796,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.md5 IS 'md5';
 -- Name: COLUMN his_config_info.gmt_create; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.gmt_create IS '创建时间';
+COMMENT ON COLUMN his_config_info.gmt_create IS '创建时间';
 
 
 --
@@ -808,7 +805,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.gmt_create IS '创建时间';
 -- Name: COLUMN his_config_info.gmt_modified; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.gmt_modified IS '修改时间';
+COMMENT ON COLUMN his_config_info.gmt_modified IS '修改时间';
 
 
 --
@@ -817,7 +814,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.gmt_modified IS '修改时间';
 -- Name: COLUMN his_config_info.src_user; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.src_user IS 'source user';
+COMMENT ON COLUMN his_config_info.src_user IS 'source user';
 
 
 --
@@ -826,7 +823,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.src_user IS 'source user';
 -- Name: COLUMN his_config_info.src_ip; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.src_ip IS 'source ip';
+COMMENT ON COLUMN his_config_info.src_ip IS 'source ip';
 
 
 --
@@ -835,7 +832,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.src_ip IS 'source ip';
 -- Name: COLUMN his_config_info.op_type; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.op_type IS 'operation type';
+COMMENT ON COLUMN his_config_info.op_type IS 'operation type';
 
 
 --
@@ -844,7 +841,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.op_type IS 'operation type';
 -- Name: COLUMN his_config_info.tenant_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.tenant_id IS '租户字段';
+COMMENT ON COLUMN his_config_info.tenant_id IS '租户字段';
 
 
 --
@@ -853,7 +850,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.tenant_id IS '租户字段';
 -- Name: COLUMN his_config_info.encrypted_data_key; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.encrypted_data_key IS '密钥';
+COMMENT ON COLUMN his_config_info.encrypted_data_key IS '密钥';
 
 
 --
@@ -862,7 +859,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.encrypted_data_key IS '密钥';
 -- Name: COLUMN his_config_info.publish_type; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.publish_type IS 'publish type gray or formal';
+COMMENT ON COLUMN his_config_info.publish_type IS 'publish type gray or formal';
 
 
 --
@@ -871,7 +868,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.publish_type IS 'publish type gra
 -- Name: COLUMN his_config_info.gray_name; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.gray_name IS 'gray name';
+COMMENT ON COLUMN his_config_info.gray_name IS 'gray name';
 
 
 --
@@ -880,7 +877,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.gray_name IS 'gray name';
 -- Name: COLUMN his_config_info.ext_info; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.his_config_info.ext_info IS 'ext info';
+COMMENT ON COLUMN his_config_info.ext_info IS 'ext info';
 
 
 --
@@ -888,7 +885,7 @@ COMMENT ON COLUMN nacos_config.his_config_info.ext_info IS 'ext info';
 -- Name: his_config_info_nid_seq; Type: SEQUENCE; Schema: nacos_config; Owner: system
 --
 
-CREATE SEQUENCE nacos_config.his_config_info_nid_seq
+CREATE SEQUENCE his_config_info_nid_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -896,7 +893,7 @@ CREATE SEQUENCE nacos_config.his_config_info_nid_seq
     CACHE 1;
 
 
-ALTER TABLE nacos_config.his_config_info_nid_seq OWNER TO system;
+;
 
 --
 -- TOC entry 5339 (class 0 OID 0)
@@ -904,7 +901,7 @@ ALTER TABLE nacos_config.his_config_info_nid_seq OWNER TO system;
 -- Name: his_config_info_nid_seq; Type: SEQUENCE OWNED BY; Schema: nacos_config; Owner: system
 --
 
-ALTER SEQUENCE nacos_config.his_config_info_nid_seq OWNED BY nacos_config.his_config_info.nid;
+ALTER SEQUENCE his_config_info_nid_seq OWNED BY his_config_info.nid;
 
 
 --
@@ -913,14 +910,14 @@ ALTER SEQUENCE nacos_config.his_config_info_nid_seq OWNED BY nacos_config.his_co
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.permissions (
+CREATE TABLE permissions (
     role character varying(50 char) NOT NULL,
     resource character varying(128 char) NOT NULL,
     action character varying(8 char) NOT NULL
 );
 
 
-ALTER TABLE nacos_config.permissions OWNER TO system;
+;
 
 --
 -- TOC entry 5340 (class 0 OID 0)
@@ -928,7 +925,7 @@ ALTER TABLE nacos_config.permissions OWNER TO system;
 -- Name: COLUMN permissions.role; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.permissions.role IS 'role';
+COMMENT ON COLUMN permissions.role IS 'role';
 
 
 --
@@ -937,7 +934,7 @@ COMMENT ON COLUMN nacos_config.permissions.role IS 'role';
 -- Name: COLUMN permissions.resource; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.permissions.resource IS 'resource';
+COMMENT ON COLUMN permissions.resource IS 'resource';
 
 
 --
@@ -946,7 +943,7 @@ COMMENT ON COLUMN nacos_config.permissions.resource IS 'resource';
 -- Name: COLUMN permissions.action; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.permissions.action IS 'action';
+COMMENT ON COLUMN permissions.action IS 'action';
 
 
 --
@@ -955,13 +952,13 @@ COMMENT ON COLUMN nacos_config.permissions.action IS 'action';
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.roles (
+CREATE TABLE roles (
     username character varying(50 char) NOT NULL,
     role character varying(50 char) NOT NULL
 );
 
 
-ALTER TABLE nacos_config.roles OWNER TO system;
+;
 
 --
 -- TOC entry 5343 (class 0 OID 0)
@@ -969,7 +966,7 @@ ALTER TABLE nacos_config.roles OWNER TO system;
 -- Name: COLUMN roles.username; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.roles.username IS 'username';
+COMMENT ON COLUMN roles.username IS 'username';
 
 
 --
@@ -978,7 +975,7 @@ COMMENT ON COLUMN nacos_config.roles.username IS 'username';
 -- Name: COLUMN roles.role; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.roles.role IS 'role';
+COMMENT ON COLUMN roles.role IS 'role';
 
 
 --
@@ -987,7 +984,7 @@ COMMENT ON COLUMN nacos_config.roles.role IS 'role';
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.tenant_capacity (
+CREATE TABLE tenant_capacity (
     id bigint NOT NULL,
     tenant_id character varying(128 char) DEFAULT NULL::varchar NOT NULL,
     quota bigint DEFAULT 0 NOT NULL,
@@ -1001,7 +998,7 @@ CREATE TABLE nacos_config.tenant_capacity (
 );
 
 
-ALTER TABLE nacos_config.tenant_capacity OWNER TO system;
+;
 
 --
 -- TOC entry 5345 (class 0 OID 0)
@@ -1009,7 +1006,7 @@ ALTER TABLE nacos_config.tenant_capacity OWNER TO system;
 -- Name: TABLE tenant_capacity; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON TABLE nacos_config.tenant_capacity IS '租户容量信息表';
+COMMENT ON TABLE tenant_capacity IS '租户容量信息表';
 
 
 --
@@ -1018,7 +1015,7 @@ COMMENT ON TABLE nacos_config.tenant_capacity IS '租户容量信息表';
 -- Name: COLUMN tenant_capacity.id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.id IS '主键ID';
+COMMENT ON COLUMN tenant_capacity.id IS '主键ID';
 
 
 --
@@ -1027,7 +1024,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.id IS '主键ID';
 -- Name: COLUMN tenant_capacity.tenant_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.tenant_id IS 'Tenant ID';
+COMMENT ON COLUMN tenant_capacity.tenant_id IS 'Tenant ID';
 
 
 --
@@ -1036,7 +1033,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.tenant_id IS 'Tenant ID';
 -- Name: COLUMN tenant_capacity.quota; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.quota IS '配额，0表示使用默认值';
+COMMENT ON COLUMN tenant_capacity.quota IS '配额，0表示使用默认值';
 
 
 --
@@ -1045,7 +1042,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.quota IS '配额，0表示使用�
 -- Name: COLUMN tenant_capacity.usage; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.usage IS '使用量';
+COMMENT ON COLUMN tenant_capacity.usage IS '使用量';
 
 
 --
@@ -1054,7 +1051,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.usage IS '使用量';
 -- Name: COLUMN tenant_capacity.max_size; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.max_size IS '单个配置大小上限，单位为字节，0表示使用默认值';
+COMMENT ON COLUMN tenant_capacity.max_size IS '单个配置大小上限，单位为字节，0表示使用默认值';
 
 
 --
@@ -1063,7 +1060,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.max_size IS '单个配置大小�
 -- Name: COLUMN tenant_capacity.max_aggr_count; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.max_aggr_count IS '聚合子配置最大个数';
+COMMENT ON COLUMN tenant_capacity.max_aggr_count IS '聚合子配置最大个数';
 
 
 --
@@ -1072,7 +1069,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.max_aggr_count IS '聚合子配�
 -- Name: COLUMN tenant_capacity.max_aggr_size; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.max_aggr_size IS '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值';
+COMMENT ON COLUMN tenant_capacity.max_aggr_size IS '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值';
 
 
 --
@@ -1081,7 +1078,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.max_aggr_size IS '单个聚合数
 -- Name: COLUMN tenant_capacity.max_history_count; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.max_history_count IS '最大变更历史数量';
+COMMENT ON COLUMN tenant_capacity.max_history_count IS '最大变更历史数量';
 
 
 --
@@ -1090,7 +1087,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.max_history_count IS '最大变�
 -- Name: COLUMN tenant_capacity.gmt_create; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.gmt_create IS '创建时间';
+COMMENT ON COLUMN tenant_capacity.gmt_create IS '创建时间';
 
 
 --
@@ -1099,7 +1096,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.gmt_create IS '创建时间';
 -- Name: COLUMN tenant_capacity.gmt_modified; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_capacity.gmt_modified IS '修改时间';
+COMMENT ON COLUMN tenant_capacity.gmt_modified IS '修改时间';
 
 
 --
@@ -1107,7 +1104,7 @@ COMMENT ON COLUMN nacos_config.tenant_capacity.gmt_modified IS '修改时间';
 -- Name: tenant_capacity_id_seq; Type: SEQUENCE; Schema: nacos_config; Owner: system
 --
 
-CREATE SEQUENCE nacos_config.tenant_capacity_id_seq
+CREATE SEQUENCE tenant_capacity_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -1115,7 +1112,7 @@ CREATE SEQUENCE nacos_config.tenant_capacity_id_seq
     CACHE 1;
 
 
-ALTER TABLE nacos_config.tenant_capacity_id_seq OWNER TO system;
+;
 
 --
 -- TOC entry 5356 (class 0 OID 0)
@@ -1123,7 +1120,7 @@ ALTER TABLE nacos_config.tenant_capacity_id_seq OWNER TO system;
 -- Name: tenant_capacity_id_seq; Type: SEQUENCE OWNED BY; Schema: nacos_config; Owner: system
 --
 
-ALTER SEQUENCE nacos_config.tenant_capacity_id_seq OWNED BY nacos_config.tenant_capacity.id;
+ALTER SEQUENCE tenant_capacity_id_seq OWNED BY tenant_capacity.id;
 
 
 --
@@ -1132,7 +1129,7 @@ ALTER SEQUENCE nacos_config.tenant_capacity_id_seq OWNED BY nacos_config.tenant_
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.tenant_info (
+CREATE TABLE tenant_info (
     id bigint NOT NULL,
     kp character varying(128 char) NOT NULL,
     tenant_id character varying(128 char) DEFAULT NULL::varchar,
@@ -1144,7 +1141,7 @@ CREATE TABLE nacos_config.tenant_info (
 );
 
 
-ALTER TABLE nacos_config.tenant_info OWNER TO system;
+;
 
 --
 -- TOC entry 5357 (class 0 OID 0)
@@ -1152,7 +1149,7 @@ ALTER TABLE nacos_config.tenant_info OWNER TO system;
 -- Name: TABLE tenant_info; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON TABLE nacos_config.tenant_info IS 'tenant_info';
+COMMENT ON TABLE tenant_info IS 'tenant_info';
 
 
 --
@@ -1161,7 +1158,7 @@ COMMENT ON TABLE nacos_config.tenant_info IS 'tenant_info';
 -- Name: COLUMN tenant_info.id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.id IS 'id';
+COMMENT ON COLUMN tenant_info.id IS 'id';
 
 
 --
@@ -1170,7 +1167,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.id IS 'id';
 -- Name: COLUMN tenant_info.kp; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.kp IS 'kp';
+COMMENT ON COLUMN tenant_info.kp IS 'kp';
 
 
 --
@@ -1179,7 +1176,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.kp IS 'kp';
 -- Name: COLUMN tenant_info.tenant_id; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.tenant_id IS 'tenant_id';
+COMMENT ON COLUMN tenant_info.tenant_id IS 'tenant_id';
 
 
 --
@@ -1188,7 +1185,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.tenant_id IS 'tenant_id';
 -- Name: COLUMN tenant_info.tenant_name; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.tenant_name IS 'tenant_name';
+COMMENT ON COLUMN tenant_info.tenant_name IS 'tenant_name';
 
 
 --
@@ -1197,7 +1194,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.tenant_name IS 'tenant_name';
 -- Name: COLUMN tenant_info.tenant_desc; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.tenant_desc IS 'tenant_desc';
+COMMENT ON COLUMN tenant_info.tenant_desc IS 'tenant_desc';
 
 
 --
@@ -1206,7 +1203,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.tenant_desc IS 'tenant_desc';
 -- Name: COLUMN tenant_info.create_source; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.create_source IS 'create_source';
+COMMENT ON COLUMN tenant_info.create_source IS 'create_source';
 
 
 --
@@ -1215,7 +1212,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.create_source IS 'create_source';
 -- Name: COLUMN tenant_info.gmt_create; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.gmt_create IS '创建时间';
+COMMENT ON COLUMN tenant_info.gmt_create IS '创建时间';
 
 
 --
@@ -1224,7 +1221,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.gmt_create IS '创建时间';
 -- Name: COLUMN tenant_info.gmt_modified; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.tenant_info.gmt_modified IS '修改时间';
+COMMENT ON COLUMN tenant_info.gmt_modified IS '修改时间';
 
 
 --
@@ -1232,7 +1229,7 @@ COMMENT ON COLUMN nacos_config.tenant_info.gmt_modified IS '修改时间';
 -- Name: tenant_info_id_seq; Type: SEQUENCE; Schema: nacos_config; Owner: system
 --
 
-CREATE SEQUENCE nacos_config.tenant_info_id_seq
+CREATE SEQUENCE tenant_info_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -1240,7 +1237,7 @@ CREATE SEQUENCE nacos_config.tenant_info_id_seq
     CACHE 1;
 
 
-ALTER TABLE nacos_config.tenant_info_id_seq OWNER TO system;
+;
 
 --
 -- TOC entry 5366 (class 0 OID 0)
@@ -1248,7 +1245,7 @@ ALTER TABLE nacos_config.tenant_info_id_seq OWNER TO system;
 -- Name: tenant_info_id_seq; Type: SEQUENCE OWNED BY; Schema: nacos_config; Owner: system
 --
 
-ALTER SEQUENCE nacos_config.tenant_info_id_seq OWNED BY nacos_config.tenant_info.id;
+ALTER SEQUENCE tenant_info_id_seq OWNED BY tenant_info.id;
 
 
 --
@@ -1257,14 +1254,14 @@ ALTER SEQUENCE nacos_config.tenant_info_id_seq OWNED BY nacos_config.tenant_info
 --
 
 SET escape = off;
-CREATE TABLE nacos_config.users (
+CREATE TABLE users (
     username character varying(50 char) NOT NULL,
     password character varying(500 char) NOT NULL,
     enabled tinyint NOT NULL
 );
 
 
-ALTER TABLE nacos_config.users OWNER TO system;
+;
 
 --
 -- TOC entry 5367 (class 0 OID 0)
@@ -1272,7 +1269,7 @@ ALTER TABLE nacos_config.users OWNER TO system;
 -- Name: COLUMN users.username; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.users.username IS 'username';
+COMMENT ON COLUMN users.username IS 'username';
 
 
 --
@@ -1281,7 +1278,7 @@ COMMENT ON COLUMN nacos_config.users.username IS 'username';
 -- Name: COLUMN users.password; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.users.password IS 'password';
+COMMENT ON COLUMN users.password IS 'password';
 
 
 --
@@ -1290,7 +1287,7 @@ COMMENT ON COLUMN nacos_config.users.password IS 'password';
 -- Name: COLUMN users.enabled; Type: COMMENT; Schema: nacos_config; Owner: system
 --
 
-COMMENT ON COLUMN nacos_config.users.enabled IS 'enabled';
+COMMENT ON COLUMN users.enabled IS 'enabled';
 
 
 --
@@ -1298,7 +1295,7 @@ COMMENT ON COLUMN nacos_config.users.enabled IS 'enabled';
 -- Name: config_info id; Type: DEFAULT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_info ALTER COLUMN id SET DEFAULT nextval('nacos_config.config_info_id_seq'::regclass);
+ALTER TABLE ONLY config_info ALTER COLUMN id SET DEFAULT nextval('config_info_id_seq'::regclass);
 
 
 --
@@ -1306,7 +1303,7 @@ ALTER TABLE ONLY nacos_config.config_info ALTER COLUMN id SET DEFAULT nextval('n
 -- Name: config_info_gray id; Type: DEFAULT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_info_gray ALTER COLUMN id SET DEFAULT nextval('nacos_config.config_info_gray_id_seq'::regclass);
+ALTER TABLE ONLY config_info_gray ALTER COLUMN id SET DEFAULT nextval('config_info_gray_id_seq'::regclass);
 
 
 --
@@ -1314,7 +1311,7 @@ ALTER TABLE ONLY nacos_config.config_info_gray ALTER COLUMN id SET DEFAULT nextv
 -- Name: config_tags_relation nid; Type: DEFAULT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_tags_relation ALTER COLUMN nid SET DEFAULT nextval('nacos_config.config_tags_relation_nid_seq'::regclass);
+ALTER TABLE ONLY config_tags_relation ALTER COLUMN nid SET DEFAULT nextval('config_tags_relation_nid_seq'::regclass);
 
 
 --
@@ -1322,7 +1319,7 @@ ALTER TABLE ONLY nacos_config.config_tags_relation ALTER COLUMN nid SET DEFAULT 
 -- Name: group_capacity id; Type: DEFAULT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.group_capacity ALTER COLUMN id SET DEFAULT nextval('nacos_config.group_capacity_id_seq'::regclass);
+ALTER TABLE ONLY group_capacity ALTER COLUMN id SET DEFAULT nextval('group_capacity_id_seq'::regclass);
 
 
 --
@@ -1330,7 +1327,7 @@ ALTER TABLE ONLY nacos_config.group_capacity ALTER COLUMN id SET DEFAULT nextval
 -- Name: his_config_info nid; Type: DEFAULT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.his_config_info ALTER COLUMN nid SET DEFAULT nextval('nacos_config.his_config_info_nid_seq'::regclass);
+ALTER TABLE ONLY his_config_info ALTER COLUMN nid SET DEFAULT nextval('his_config_info_nid_seq'::regclass);
 
 
 --
@@ -1338,7 +1335,7 @@ ALTER TABLE ONLY nacos_config.his_config_info ALTER COLUMN nid SET DEFAULT nextv
 -- Name: tenant_capacity id; Type: DEFAULT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.tenant_capacity ALTER COLUMN id SET DEFAULT nextval('nacos_config.tenant_capacity_id_seq'::regclass);
+ALTER TABLE ONLY tenant_capacity ALTER COLUMN id SET DEFAULT nextval('tenant_capacity_id_seq'::regclass);
 
 
 --
@@ -1346,7 +1343,7 @@ ALTER TABLE ONLY nacos_config.tenant_capacity ALTER COLUMN id SET DEFAULT nextva
 -- Name: tenant_info id; Type: DEFAULT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.tenant_info ALTER COLUMN id SET DEFAULT nextval('nacos_config.tenant_info_id_seq'::regclass);
+ALTER TABLE ONLY tenant_info ALTER COLUMN id SET DEFAULT nextval('tenant_info_id_seq'::regclass);
 
 
 --
@@ -1403,7 +1400,7 @@ ALTER TABLE ONLY nacos_config.tenant_info ALTER COLUMN id SET DEFAULT nextval('n
 -- Data for Name: roles; Type: TABLE DATA; Schema: nacos_config; Owner: system
 --
 
-INSERT INTO nacos_config.roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
+INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
 
 
 --
@@ -1420,7 +1417,7 @@ INSERT INTO nacos_config.roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
 -- Data for Name: tenant_info; Type: TABLE DATA; Schema: nacos_config; Owner: system
 --
 
-INSERT INTO nacos_config.tenant_info (id, kp, tenant_id, tenant_name, tenant_desc, create_source, gmt_create, gmt_modified) VALUES (1, '1', '234037c9-3158-466a-a54d-d663a908728a', 'test', 'test', 'nacos', 1756172432820, 1756172432820);
+INSERT INTO tenant_info (id, kp, tenant_id, tenant_name, tenant_desc, create_source, gmt_create, gmt_modified) VALUES (1, '1', '234037c9-3158-466a-a54d-d663a908728a', 'test', 'test', 'nacos', 1756172432820, 1756172432820);
 
 
 --
@@ -1429,7 +1426,7 @@ INSERT INTO nacos_config.tenant_info (id, kp, tenant_id, tenant_name, tenant_des
 -- Data for Name: users; Type: TABLE DATA; Schema: nacos_config; Owner: system
 --
 
-INSERT INTO nacos_config.users (username, password, enabled) VALUES ('nacos', '$2a$10$79h42xPBGWfXFwX0/GU2kuFWXlgQK5wKHeHv4wuoMbpRLABdTU23O', 1);
+INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$79h42xPBGWfXFwX0/GU2kuFWXlgQK5wKHeHv4wuoMbpRLABdTU23O', 1);
 
 
 --
@@ -1438,7 +1435,7 @@ INSERT INTO nacos_config.users (username, password, enabled) VALUES ('nacos', '$
 -- Name: config_info_gray_id_seq; Type: SEQUENCE SET; Schema: nacos_config; Owner: system
 --
 
-SELECT pg_catalog.setval('nacos_config.config_info_gray_id_seq', 1, false);
+SELECT pg_catalog.setval('config_info_gray_id_seq', 1, false);
 
 
 --
@@ -1447,7 +1444,7 @@ SELECT pg_catalog.setval('nacos_config.config_info_gray_id_seq', 1, false);
 -- Name: config_info_id_seq; Type: SEQUENCE SET; Schema: nacos_config; Owner: system
 --
 
-SELECT pg_catalog.setval('nacos_config.config_info_id_seq', 8, true);
+SELECT pg_catalog.setval('config_info_id_seq', 8, true);
 
 
 --
@@ -1456,7 +1453,7 @@ SELECT pg_catalog.setval('nacos_config.config_info_id_seq', 8, true);
 -- Name: config_tags_relation_nid_seq; Type: SEQUENCE SET; Schema: nacos_config; Owner: system
 --
 
-SELECT pg_catalog.setval('nacos_config.config_tags_relation_nid_seq', 1, false);
+SELECT pg_catalog.setval('config_tags_relation_nid_seq', 1, false);
 
 
 --
@@ -1465,7 +1462,7 @@ SELECT pg_catalog.setval('nacos_config.config_tags_relation_nid_seq', 1, false);
 -- Name: group_capacity_id_seq; Type: SEQUENCE SET; Schema: nacos_config; Owner: system
 --
 
-SELECT pg_catalog.setval('nacos_config.group_capacity_id_seq', 1, false);
+SELECT pg_catalog.setval('group_capacity_id_seq', 1, false);
 
 
 --
@@ -1474,7 +1471,7 @@ SELECT pg_catalog.setval('nacos_config.group_capacity_id_seq', 1, false);
 -- Name: his_config_info_nid_seq; Type: SEQUENCE SET; Schema: nacos_config; Owner: system
 --
 
-SELECT pg_catalog.setval('nacos_config.his_config_info_nid_seq', 1, true);
+SELECT pg_catalog.setval('his_config_info_nid_seq', 1, true);
 
 
 --
@@ -1483,7 +1480,7 @@ SELECT pg_catalog.setval('nacos_config.his_config_info_nid_seq', 1, true);
 -- Name: tenant_capacity_id_seq; Type: SEQUENCE SET; Schema: nacos_config; Owner: system
 --
 
-SELECT pg_catalog.setval('nacos_config.tenant_capacity_id_seq', 1, false);
+SELECT pg_catalog.setval('tenant_capacity_id_seq', 1, false);
 
 
 --
@@ -1492,7 +1489,7 @@ SELECT pg_catalog.setval('nacos_config.tenant_capacity_id_seq', 1, false);
 -- Name: tenant_info_id_seq; Type: SEQUENCE SET; Schema: nacos_config; Owner: system
 --
 
-SELECT pg_catalog.setval('nacos_config.tenant_info_id_seq', 1, true);
+SELECT pg_catalog.setval('tenant_info_id_seq', 1, true);
 
 
 --
@@ -1500,7 +1497,7 @@ SELECT pg_catalog.setval('nacos_config.tenant_info_id_seq', 1, true);
 -- Name: roles idx_user_role_2451DF41; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.roles
+ALTER TABLE ONLY roles
     ADD CONSTRAINT "idx_user_role_2451DF41" UNIQUE (username, role);
 
 
@@ -1509,7 +1506,7 @@ ALTER TABLE ONLY nacos_config.roles
 -- Name: users primary_1a6b23be; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.users
+ALTER TABLE ONLY users
     ADD CONSTRAINT primary_1a6b23be PRIMARY KEY (username);
 
 
@@ -1518,7 +1515,7 @@ ALTER TABLE ONLY nacos_config.users
 -- Name: config_info primary_73f26186; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_info
+ALTER TABLE ONLY config_info
     ADD CONSTRAINT primary_73f26186 PRIMARY KEY (id);
 
 
@@ -1527,7 +1524,7 @@ ALTER TABLE ONLY nacos_config.config_info
 -- Name: config_tags_relation primary_82226084; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_tags_relation
+ALTER TABLE ONLY config_tags_relation
     ADD CONSTRAINT primary_82226084 PRIMARY KEY (nid);
 
 
@@ -1536,7 +1533,7 @@ ALTER TABLE ONLY nacos_config.config_tags_relation
 -- Name: tenant_info primary_8b91ed1e; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.tenant_info
+ALTER TABLE ONLY tenant_info
     ADD CONSTRAINT primary_8b91ed1e PRIMARY KEY (id);
 
 
@@ -1545,7 +1542,7 @@ ALTER TABLE ONLY nacos_config.tenant_info
 -- Name: his_config_info primary_93a4dc6b; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.his_config_info
+ALTER TABLE ONLY his_config_info
     ADD CONSTRAINT primary_93a4dc6b PRIMARY KEY (nid);
 
 
@@ -1554,7 +1551,7 @@ ALTER TABLE ONLY nacos_config.his_config_info
 -- Name: config_info_gray primary_d4dee492; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_info_gray
+ALTER TABLE ONLY config_info_gray
     ADD CONSTRAINT primary_d4dee492 PRIMARY KEY (id);
 
 
@@ -1563,7 +1560,7 @@ ALTER TABLE ONLY nacos_config.config_info_gray
 -- Name: group_capacity primary_d72b7e75; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.group_capacity
+ALTER TABLE ONLY group_capacity
     ADD CONSTRAINT primary_d72b7e75 PRIMARY KEY (id);
 
 
@@ -1572,7 +1569,7 @@ ALTER TABLE ONLY nacos_config.group_capacity
 -- Name: tenant_capacity primary_f4ccc2aa; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.tenant_capacity
+ALTER TABLE ONLY tenant_capacity
     ADD CONSTRAINT primary_f4ccc2aa PRIMARY KEY (id);
 
 
@@ -1581,7 +1578,7 @@ ALTER TABLE ONLY nacos_config.tenant_capacity
 -- Name: config_info uk_configinfo_datagrouptenant_C827FEB8; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_info
+ALTER TABLE ONLY config_info
     ADD CONSTRAINT "uk_configinfo_datagrouptenant_C827FEB8" UNIQUE (data_id, group_id, tenant_id);
 
 
@@ -1590,7 +1587,7 @@ ALTER TABLE ONLY nacos_config.config_info
 -- Name: config_info_gray uk_configinfogray_datagrouptenantgray_4632BBE2; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_info_gray
+ALTER TABLE ONLY config_info_gray
     ADD CONSTRAINT "uk_configinfogray_datagrouptenantgray_4632BBE2" UNIQUE (data_id, group_id, tenant_id, gray_name);
 
 
@@ -1599,7 +1596,7 @@ ALTER TABLE ONLY nacos_config.config_info_gray
 -- Name: config_tags_relation uk_configtagrelation_configidtag_25395725; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.config_tags_relation
+ALTER TABLE ONLY config_tags_relation
     ADD CONSTRAINT uk_configtagrelation_configidtag_25395725 UNIQUE (id, tag_name, tag_type);
 
 
@@ -1608,7 +1605,7 @@ ALTER TABLE ONLY nacos_config.config_tags_relation
 -- Name: group_capacity uk_group_id_377325F2; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.group_capacity
+ALTER TABLE ONLY group_capacity
     ADD CONSTRAINT "uk_group_id_377325F2" UNIQUE (group_id);
 
 
@@ -1617,7 +1614,7 @@ ALTER TABLE ONLY nacos_config.group_capacity
 -- Name: permissions uk_role_permission_1DFC6980; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.permissions
+ALTER TABLE ONLY permissions
     ADD CONSTRAINT "uk_role_permission_1DFC6980" UNIQUE (role, resource, action);
 
 
@@ -1626,7 +1623,7 @@ ALTER TABLE ONLY nacos_config.permissions
 -- Name: tenant_capacity uk_tenant_id_22935E1; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.tenant_capacity
+ALTER TABLE ONLY tenant_capacity
     ADD CONSTRAINT "uk_tenant_id_22935E1" UNIQUE (tenant_id);
 
 
@@ -1635,7 +1632,7 @@ ALTER TABLE ONLY nacos_config.tenant_capacity
 -- Name: tenant_info uk_tenant_info_kptenantid_195888C1; Type: CONSTRAINT; Schema: nacos_config; Owner: system
 --
 
-ALTER TABLE ONLY nacos_config.tenant_info
+ALTER TABLE ONLY tenant_info
     ADD CONSTRAINT "uk_tenant_info_kptenantid_195888C1" UNIQUE (kp, tenant_id);
 
 
@@ -1644,7 +1641,7 @@ ALTER TABLE ONLY nacos_config.tenant_info
 -- Name: idx_dataid_gmt_modified_99E37417; Type: INDEX; Schema: nacos_config; Owner: system
 --
 
-CREATE INDEX "idx_dataid_gmt_modified_99E37417" ON nacos_config.config_info_gray USING btree (data_id, gmt_modified);
+CREATE INDEX "idx_dataid_gmt_modified_99E37417" ON config_info_gray USING btree (data_id, gmt_modified);
 
 
 --
@@ -1652,7 +1649,7 @@ CREATE INDEX "idx_dataid_gmt_modified_99E37417" ON nacos_config.config_info_gray
 -- Name: idx_did_8DE97C10; Type: INDEX; Schema: nacos_config; Owner: system
 --
 
-CREATE INDEX "idx_did_8DE97C10" ON nacos_config.his_config_info USING btree (data_id);
+CREATE INDEX "idx_did_8DE97C10" ON his_config_info USING btree (data_id);
 
 
 --
@@ -1660,7 +1657,7 @@ CREATE INDEX "idx_did_8DE97C10" ON nacos_config.his_config_info USING btree (dat
 -- Name: idx_gmt_create_F3B3E5A1; Type: INDEX; Schema: nacos_config; Owner: system
 --
 
-CREATE INDEX "idx_gmt_create_F3B3E5A1" ON nacos_config.his_config_info USING btree (gmt_create);
+CREATE INDEX "idx_gmt_create_F3B3E5A1" ON his_config_info USING btree (gmt_create);
 
 
 --
@@ -1668,7 +1665,7 @@ CREATE INDEX "idx_gmt_create_F3B3E5A1" ON nacos_config.his_config_info USING btr
 -- Name: idx_gmt_modified_42DBB1BB; Type: INDEX; Schema: nacos_config; Owner: system
 --
 
-CREATE INDEX "idx_gmt_modified_42DBB1BB" ON nacos_config.his_config_info USING btree (gmt_modified);
+CREATE INDEX "idx_gmt_modified_42DBB1BB" ON his_config_info USING btree (gmt_modified);
 
 
 --
@@ -1676,7 +1673,7 @@ CREATE INDEX "idx_gmt_modified_42DBB1BB" ON nacos_config.his_config_info USING b
 -- Name: idx_gmt_modified_A401CAE2; Type: INDEX; Schema: nacos_config; Owner: system
 --
 
-CREATE INDEX "idx_gmt_modified_A401CAE2" ON nacos_config.config_info_gray USING btree (gmt_modified);
+CREATE INDEX "idx_gmt_modified_A401CAE2" ON config_info_gray USING btree (gmt_modified);
 
 
 --
@@ -1684,7 +1681,7 @@ CREATE INDEX "idx_gmt_modified_A401CAE2" ON nacos_config.config_info_gray USING 
 -- Name: idx_tenant_id_4FB846F8; Type: INDEX; Schema: nacos_config; Owner: system
 --
 
-CREATE INDEX "idx_tenant_id_4FB846F8" ON nacos_config.config_tags_relation USING btree (tenant_id);
+CREATE INDEX "idx_tenant_id_4FB846F8" ON config_tags_relation USING btree (tenant_id);
 
 
 --
@@ -1692,7 +1689,7 @@ CREATE INDEX "idx_tenant_id_4FB846F8" ON nacos_config.config_tags_relation USING
 -- Name: idx_tenant_id_ABB71DBA; Type: INDEX; Schema: nacos_config; Owner: system
 --
 
-CREATE INDEX "idx_tenant_id_ABB71DBA" ON nacos_config.tenant_info USING btree (tenant_id);
+CREATE INDEX "idx_tenant_id_ABB71DBA" ON tenant_info USING btree (tenant_id);
 
 
 -- Completed on 2025-08-26 11:16:04 CST
